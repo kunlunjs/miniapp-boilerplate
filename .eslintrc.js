@@ -1,7 +1,9 @@
 module.exports = {
   extends: ['taro/react'],
+  plugins: ['prettier'],
   rules: {
     'jsx-quotes': ['error', 'prefer-double'],
+    'prettier/prettier': 'error',
   },
   overrides: [
     {

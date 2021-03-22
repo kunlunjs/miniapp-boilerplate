@@ -22,12 +22,6 @@ class App extends Component {
     })
   }
 
-  // componentDidCatch() {}
-
-  // componentDidShow() {}
-
-  // componentDidHide() {}
-
   setUser = (user: User | null) => {
     this.setState({
       user,

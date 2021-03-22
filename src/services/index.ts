@@ -6,6 +6,7 @@ import { createServices } from './yapi.services'
 
 const notNeedAuthPaths = ['/auth/login']
 
+// service服务入口
 const services = createServices(
   async (
     url: string,
@@ -51,6 +52,7 @@ export default services
 
 let isRedirectToLoginFlag = false
 
+// 不同的service状态的处理函数
 function statusHandler(res: Taro.request.SuccessCallbackResult) {
   const { data, statusCode, errMsg } = res
   if (statusCode >= 200 && statusCode < 300) {
@@ -82,6 +84,11 @@ function statusHandler(res: Taro.request.SuccessCallbackResult) {
   }
 }
 
+/**
+ * 小程序文件上传
+ * @param filePath 文件路径
+ * @returns 上传的文件路径
+ */
 export async function upload(filePath: string) {
   return uploadFile({
     filePath,
@@ -95,6 +102,7 @@ export async function upload(filePath: string) {
     },
   }).then(res => {
     if (res.statusCode >= 200 && res.statusCode < 300) {
+      // TODO 改为业务真实返回结果
       return JSON.parse(res.data).url
     }
     throw new Error(res.errMsg)

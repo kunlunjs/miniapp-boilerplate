@@ -9,9 +9,16 @@ import {
 import { toast } from './display'
 import { addUrlPrefix } from './url'
 
+/**
+ * 支持预览的文件后缀名
+ */
 export const SUPPORT_PREVIEW_FILES = /^(jpe?g|gif|png|bmp|pdf|docx?|xlsx?|pptx?)$/
 const IMAGE_FILES = /^(jpe?g|gif|png)$/
 
+/**
+ * 预览文件，如果支持的话
+ * @param url 文件地址
+ */
 export function previewDoc(url: string) {
   return new Promise<void>((resolve, reject) => {
     const splited = url.split('.')

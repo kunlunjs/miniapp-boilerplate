@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "miniapp-boilerplate",
   "description": "基于Taro的小程序项目模板",
-  "appid": "fixme",
+  "appid": "wx4dbcf2372227dd56",
   "setting": {
     "urlCheck": true,
     "es6": false,

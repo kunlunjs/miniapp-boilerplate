@@ -1,0 +1,23 @@
+{
+  "Taro component": {
+    "prefix": "taro",
+    "body": [
+      "import React from 'react'",
+      "import { View } from '@tarojs/components'",
+      "",
+      "interface $1Props {",
+      "  $2",
+      "}",
+      "",
+      "const $1:React.FC<$1Props> = ({ $3 }) => {",
+      "",
+      "  return (",
+      "    <View>$4</View>",
+      "  )",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "Taro component"
+  }
+}

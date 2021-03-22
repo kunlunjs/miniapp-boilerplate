@@ -9,13 +9,13 @@ declare module '*.scss'
 declare module '*.sass'
 declare module '*.styl'
 
-declare module 'alife-logger' {
-  export function singleton({
-    pid: string,
-    appType: string,
-    imgUrl: string,
-    enableLinkTrace: boolean,
-    behavior: boolean,
-    enableSPA: boolean,
-  }) {}
-}
+// declare module 'alife-logger' {
+//   export function singleton({
+//     pid: string,
+//     appType: string,
+//     imgUrl: string,
+//     enableLinkTrace: boolean,
+//     behavior: boolean,
+//     enableSPA: boolean,
+//   }) {}
+// }

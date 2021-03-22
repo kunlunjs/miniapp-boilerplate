@@ -6,7 +6,12 @@ type SetterType<T> = (data: T) => void
 
 type StoreHookType<T> = () => [T, SetterType<T>]
 
-// function createStoreHook<T>(defaultValue: T): StoreHookType<T>
+/**
+ * 创建一个可缓存的数据
+ * @param initialValue 初始值
+ * @param service 获取数据的函数
+ * @returns 类似useState的返回
+ */
 function createStoreHook<T>(
   initialValue: T,
   service?: ServiceType<T>,

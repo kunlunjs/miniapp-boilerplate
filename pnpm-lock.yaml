@@ -13,6 +13,7 @@ devDependencies:
   '@tarojs/cli': 3.0.25_typescript@3.9.9
   '@tarojs/mini-runner': 3.0.25
   '@tarojs/webpack-runner': 3.0.25
+  '@types/node': 14.14.35
   '@types/react': 16.14.5
   '@types/webpack-env': 1.16.0
   '@typescript-eslint/eslint-plugin': 2.34.0_4df26d2b9b7591cbda305132c8f490f3
@@ -14239,6 +14240,7 @@ specifiers:
   '@tarojs/runtime': 3.0.25
   '@tarojs/taro': 3.0.25
   '@tarojs/webpack-runner': 3.0.25
+  '@types/node': ^14.14.35
   '@types/react': ^16.0.0
   '@types/webpack-env': ^1.13.6
   '@typescript-eslint/eslint-plugin': ^2.x

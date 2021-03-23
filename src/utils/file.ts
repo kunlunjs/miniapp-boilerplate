@@ -6,7 +6,7 @@ import {
   showLoading,
   showModal,
 } from '@tarojs/taro'
-import { toast } from './display'
+import { toast } from './app'
 import { addUrlPrefix } from './url'
 
 /**

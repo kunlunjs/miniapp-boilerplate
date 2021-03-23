@@ -1,28 +1,24 @@
-import { BASE_URL } from '@/constants'
-
+import { BASE_URL } from '../constants'
 /**
  * 从文件url地址中抽出文件名，一般用于附件展示
  * @param url 文件url
  * @param maxLength 文件最大长度，超出截取
  * @returns 从url中获取的文件名
  */
-export const getFileNameFromUrl = (url: string, maxLength: number) => {
+export const getFileNameFromUrl = (url: string, maxLength?: number) => {
   if (!url) return ''
   const splited = url.split('/')
   const _path = decodeURIComponent(splited[splited.length - 1] ?? '')
   let ret = _path
-  if (maxLength) {
-    const splitedPath = _path.split('.')
-    // 最大长度限制
-    if (splitedPath.length) {
-      ret =
-        splitedPath
-          .slice(0, splitedPath.length - 1)
-          .join('')
-          .slice(0, maxLength) +
-        '.' +
-        splitedPath[splitedPath.length - 1]
+  const splitedPath = _path.split('.')
+  // 最大长度限制
+  if (splitedPath.length) {
+    ret = splitedPath.slice(0, splitedPath.length - 1).join('')
+
+    if (maxLength) {
+      ret = ret.slice(0, maxLength)
     }
+    ret = ret + '.' + splitedPath[splitedPath.length - 1]
   }
   return ret
 }

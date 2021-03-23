@@ -15,12 +15,14 @@ devDependencies:
   '@tarojs/cli': 3.0.25_typescript@3.9.9
   '@tarojs/mini-runner': 3.0.25
   '@tarojs/webpack-runner': 3.0.25
+  '@types/baretest': 2.0.0
   '@types/node': 14.14.35
   '@types/react': 16.14.5
   '@types/webpack-env': 1.16.0
   '@typescript-eslint/eslint-plugin': 2.34.0_4df26d2b9b7591cbda305132c8f490f3
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.9
   babel-preset-taro: 3.0.25
+  baretest: 2.0.0
   cross-env: 7.0.3
   devmoji: 2.2.0
   eslint: 6.8.0
@@ -1875,6 +1877,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-v+dxizsFVyXgD3EpFuqT9YjdEjbJmPxNf1QIX9ohZOhxh1ZF2yhqv3vYaeum9lg3VghhxS5S0a6yldN9J9lPEQ==
+  /@types/baretest/2.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-Yd+47uRtX/4No0alCNnnzICDR7aO6GNfyqjAHmAwwZyH/Cht0WOZnnxao83M1W9utce5aPZhtQvdpvIFIJkniw==
   /@types/caseless/0.12.2:
     dev: true
     resolution:
@@ -3159,6 +3165,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
+  /barecolor/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha512-ncJ680U+r1CGBt73L3O6V9GIAPy3hbDmWODEQajwEnDmmzeStvc4UYhapUSxUpS76+MHxyRihzZfwhyl122Zdw==
+  /baretest/2.0.0:
+    dependencies:
+      barecolor: 1.0.1
+    dev: true
+    resolution:
+      integrity: sha512-hRmYnBojeijT3jH0GtqLoHus+adPoeYh2NmcNT3wBPH903AUphcFqs1gJ64fBovDXql51Df24g9D9jcXRZd4vA==
   /base/0.11.2:
     dependencies:
       cache-base: 1.0.1
@@ -14657,12 +14673,14 @@ specifiers:
   '@tarojs/runtime': 3.0.25
   '@tarojs/taro': 3.0.25
   '@tarojs/webpack-runner': 3.0.25
+  '@types/baretest': ^2.0.0
   '@types/node': ^14.14.35
   '@types/react': ^16.0.0
   '@types/webpack-env': ^1.13.6
   '@typescript-eslint/eslint-plugin': ^2.x
   '@typescript-eslint/parser': ^2.x
   babel-preset-taro: 3.0.25
+  baretest: ^2.0.0
   cross-env: ^7.0.3
   devmoji: ^2.2.0
   eslint: ^6.8.0

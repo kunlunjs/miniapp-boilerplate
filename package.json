@@ -33,7 +33,7 @@
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
     "update:api": "y2s update -y",
-    "upload": "minat upload",
+    "upload": "minat upload1",
     "up:test": "cross-env API_URL=http://xxx.xxx.xxx:8000/ npm run build:weapp && minat upload",
     "up:prod": "cross-env API_URL=https://xxx.xxx.xxx/ npm run build:weapp && minat upload"
   },

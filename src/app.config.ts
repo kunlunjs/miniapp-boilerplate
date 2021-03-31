@@ -19,7 +19,7 @@ const config: MinaConfig = {
         iconPath: 'assets/tabbar/home.png',
         selectedIconPath: 'assets/tabbar/home_on.png',
         pagePath: 'pages/index/index',
-        text: '首页',
+        text: '首页1',
       },
       {
         iconPath: 'assets/tabbar/parlor.png',

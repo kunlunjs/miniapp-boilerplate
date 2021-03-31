@@ -14,7 +14,6 @@ class App extends Component {
 
   async componentDidMount() {
     if (getToken()) {
-      // TODO 根据业务调整
       await this.refreshMe()
     }
     this.setState({

@@ -1,9 +1,11 @@
 # XXX 小程序
 
+基于`Taro`的多端小程序开发项目模板。
+
 ## 对比其它开发框架
 
-- `uni-app`
-- `Remax`
+- `uni-app` Vue 技术栈，与我们主要技术栈不同，但生态相对丰富很多
+- `Remax` 做跨多端应用上会稍微复杂点，如果只是微信小程序，也可以使用。其它参见`https://remaxjs.org/faq#%E4%B8%8E-taro-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F`
 
 ## Get started
 
@@ -72,4 +74,5 @@ npm completion >> ~/.zshrc
   建议一个目录下不要有超过 2 个子页面，如果子页面较多，建议每个子页面一个文件夹封装。
 
 - [ ] 新增组件。在`src/components`目录添加，一个组件一个目录，不需要`xxx.config.ts`文件，其它同页面新增一致。
+- [ ] 混合开发，在`Taro`里使用原生组件，[参考](http://taro-docs.jd.com/taro/docs/mini-third-party/)
 - [ ] 更多微信小程序开发文档，请参考[官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)

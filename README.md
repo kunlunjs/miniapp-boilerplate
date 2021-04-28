@@ -73,6 +73,10 @@ npm completion >> ~/.zshrc
 
   建议一个目录下不要有超过 2 个子页面，如果子页面较多，建议每个子页面一个文件夹封装。
 
-- [ ] 新增组件。在`src/components`目录添加，一个组件一个目录，不需要`xxx.config.ts`文件，其它同页面新增一致。
+- [x] 新增组件。在`src/components`目录添加，一个组件一个目录，不需要`xxx.config.ts`文件，其它同页面新增一致。
 - [ ] 混合开发，在`Taro`里使用原生组件，[参考](http://taro-docs.jd.com/taro/docs/mini-third-party/)
+- [ ] 下拉刷新
+- [ ] config 中配置说明
 - [ ] 更多微信小程序开发文档，请参考[官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)
+- [ ] 踩坑记录
+- [ ] 微信授权，openId，unionId，支付

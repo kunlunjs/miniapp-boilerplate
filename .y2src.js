@@ -1,6 +1,6 @@
 module.exports = {
   // yapi 地址
-  apiPrefix: 'http://apimock.nanjingzw.cn',
+  apiPrefix: 'https://apistore.ainanjing.org.cn/',
   // 项目id
   projectId: null,
   // 当前项目的token
@@ -9,4 +9,6 @@ module.exports = {
   trim: true,
   // 忽略更新的文件列表
   // ignoreFiles: ['yapi.services.ts'],
+  hasFormData: false,
+  dataPath: 'data'
 }

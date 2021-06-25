@@ -1,3 +1,4 @@
+import { ServiceRequestAndResponseMap } from '@/services/yapi.api'
 import { User } from '@/types/user'
 import { noop } from '@/utils'
 import { createContext, useContext } from 'react'
@@ -12,10 +13,10 @@ export interface UserState {
   logged: boolean
   // 设置当前登录用户
   setUser: (state: User | null) => void
-  // 登录
-  login: (username: string, password: string) => Promise<void>
+  // 注册
+  register: (params: ServiceRequestAndResponseMap['微信@注册']['body']) => Promise<boolean>
   // 更新我的信息
-  refreshMe: () => Promise<void>
+  refreshMe: () => Promise<boolean>
   // 登出
   logout: () => Promise<void>
 }
@@ -26,9 +27,9 @@ export const UserContext = createContext<UserState>({
   logged: false,
   userLoading: false,
   setUser: noop,
-  login: () => Promise.resolve(),
-  refreshMe: () => Promise.resolve(),
-  logout: () => Promise.resolve(),
+  register: () => Promise.resolve(true),
+  refreshMe: () => Promise.resolve(true),
+  logout: () => Promise.resolve()
 })
 
 export function useUser() {

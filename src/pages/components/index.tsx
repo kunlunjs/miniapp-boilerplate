@@ -1,9 +1,7 @@
-import React from 'react'
 import { View } from '@tarojs/components'
+import React from 'react'
 
-interface DemoProps {}
-
-const Demo: React.FC<DemoProps> = ({}) => {
+const Demo: React.FC = () => {
   return <View></View>
 }
 

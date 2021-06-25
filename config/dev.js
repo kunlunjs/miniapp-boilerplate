@@ -1,11 +1,11 @@
 module.exports = {
   env: {
-    NODE_ENV: '"development"',
+    NODE_ENV: '"development"'
   },
   defineConstants: {},
   mini: {},
   h5: {
-    esnextModules: ['taro-ui'],
+    esnextModules: ['taro-ui']
     // devServer: {
     //   proxy: {
     //     '/api': {
@@ -14,5 +14,5 @@ module.exports = {
     //     },
     //   },
     // },
-  },
+  }
 }

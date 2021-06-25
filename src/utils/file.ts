@@ -4,9 +4,9 @@ import {
   openDocument,
   previewImage,
   showLoading,
-  showModal,
+  showModal
 } from '@tarojs/taro'
-import { toast } from './app'
+import { toast } from './display'
 import { addUrlPrefix } from './url'
 
 /**
@@ -40,7 +40,7 @@ export function previewDoc(url: string) {
             fail(res1) {
               console.error(res1)
               toast('当前文件不支持预览')
-            },
+            }
           })
         }
         resolve()
@@ -50,19 +50,19 @@ export function previewDoc(url: string) {
           showModal({
             title: '提示 ',
             content: '文件过大不支持预览，请前往PC端查看',
-            showCancel: false,
+            showCancel: false
           })
         }
         reject(res)
       },
       complete: () => {
         hideLoading()
-      },
+      }
     })
     // @ts-ignore
     downloadTask.progress(res => {
       showLoading({
-        title: `加载进度:${res.progress}%`,
+        title: `加载进度:${res.progress}%`
       })
     })
   })

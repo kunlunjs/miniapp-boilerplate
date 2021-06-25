@@ -1,0 +1,38 @@
+// Text ellipsis
+.text-ellipsis(@line: 1) when (@line = 1) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+}
+
+.text-ellipsis(@line: 1) when (@line > 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}
+
+// Border radius
+.border-radius(@size) {
+  overflow: hidden;
+  border-radius: @size * 1px !important;
+  transform: translate(0, 0);
+}
+
+.ratio(@width, @height) {
+  .ratio-@{width}-@{height} {
+    position: relative;
+    padding-top: percentage(16 / 9);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    & > image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

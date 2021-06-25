@@ -1,7 +1,7 @@
 import { PageConfig } from '@tarojs/taro'
 
 const config: PageConfig = {
-  navigationBarTitleText: 'Tab',
+  navigationBarTitleText: 'Tab'
 }
 
 export default config

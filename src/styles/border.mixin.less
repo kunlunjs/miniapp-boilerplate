@@ -1,0 +1,166 @@
+@import './variables.less';
+
+.hairline-common() {
+  position: absolute;
+  box-sizing: border-box;
+  transform-origin: center;
+  content: '';
+  pointer-events: none;
+}
+
+.hairline-base(@color: @divider-color,
+@style: solid) {
+  .hairline-common();
+
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0 @style @color;
+  transform: scale(0.5);
+}
+
+.hairline-surround(@color: @divider-color,
+@style: solid,
+@width: 1px) {
+  position: relative;
+
+  &::after {
+    .hairline-base(@color, @style);
+
+    border-width: @width;
+  }
+}
+
+.hairline-top(@color: @divider-color,
+@style: solid,
+@width: 1px) {
+  position: relative;
+
+  &::after {
+    .hairline-base(@color, @style);
+
+    border-top-width: @width;
+  }
+}
+
+.hairline-bottom(@color: @divider-color,
+@style: solid,
+@width: 1px) {
+  position: relative;
+
+  &::after {
+    .hairline-base(@color, @style);
+
+    border-bottom-width: @width;
+  }
+}
+
+.hairline-left(@color: @divider-color,
+@style: solid,
+@width: 1px) {
+  position: relative;
+
+  &::after {
+    .hairline-base(@color, @style);
+
+    border-left-width: @width;
+  }
+}
+
+.hairline-right(@color: @divider-color,
+@style: solid,
+@width: 1px) {
+  position: relative;
+
+  &::after {
+    .hairline-base(@color, @style);
+
+    border-right-width: @width;
+  }
+}
+
+.hairline-top-bottom(@color: @divider-color,
+@style: solid,
+@width: 1px) {
+  position: relative;
+
+  &::after {
+    .hairline-base(@color, @style);
+
+    border-top-width: @width;
+    border-bottom-width: @width;
+  }
+}
+
+.hairline-bottom-relative(@color: @divider-color,
+@style: solid,
+@width: 1px,
+$left: 0) {
+  position: relative;
+
+  &::after {
+    .hairline-common();
+
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: $left;
+    border-bottom: @width @style @color;
+    transform: scaleY(0.5);
+  }
+}
+
+.hairline-top-relative(@color: @divider-color,
+@style: solid,
+@width: 1px,
+$left: 0) {
+  position: relative;
+
+  &::before {
+    .hairline-common();
+
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: $left;
+    border-top: @width @style @color;
+    transform: scaleY(0.5);
+  }
+}
+
+.hairline-left-relative(@color: @divider-color,
+@style: solid,
+@width: 1px,
+@top: 0) {
+  position: relative;
+
+  &::after {
+    .hairline-common();
+
+    top: @top;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    border-left: @width @style @color;
+    transform: scaleX(0.5);
+  }
+}
+
+.hairline-right-relative(@color: @divider-color,
+@style: solid,
+@width: 1px,
+@top: 0) {
+  position: relative;
+
+  &::after {
+    .hairline-common();
+
+    top: @top;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    border-right: @width @style @color;
+    transform: scaleX(0.5);
+  }
+}

@@ -1,11 +1,6 @@
 import baretest from 'baretest'
 import assert from 'assert'
-import {
-  getFileNameFromUrl,
-  addUrlPrefix,
-  querystringify,
-  resolvePath,
-} from '../../src/utils/url'
+import { getFileNameFromUrl, addUrlPrefix, querystringify, resolvePath } from '../../src/utils/url'
 
 const test = baretest('url')
 
@@ -13,14 +8,11 @@ test('getFileNameFromUrl', async () => {
   assert.strictEqual(getFileNameFromUrl('http://a.b.c/def.gg'), 'def.gg')
   assert.strictEqual(
     getFileNameFromUrl('http://a.b.c/defffffffffffffffffffffffffffffffffff.gg'),
-    'defffffffffffffffffffffffffffffffffff.gg',
+    'defffffffffffffffffffffffffffffffffff.gg'
   )
   assert.strictEqual(
-    getFileNameFromUrl(
-      'http://a.b.c/defffffffffffffffffffffffffffffffffff.gg',
-      8,
-    ),
-    'deffffff.gg',
+    getFileNameFromUrl('http://a.b.c/defffffffffffffffffffffffffffffffffff.gg', 8),
+    'deffffff.gg'
   )
 })
 
@@ -39,10 +31,10 @@ test('querystringify', async () => {
       post: undefined,
       homepage: '',
       deep: {
-        notSupport: true,
-      },
+        notSupport: true
+      }
     }),
-    'id=1&name=abc&avatar=http%3A%2F%2Fa.b.c%2Fxxx.png&address=A%2CB&deep=%5Bobject%20Object%5D',
+    'id=1&name=abc&avatar=http%3A%2F%2Fa.b.c%2Fxxx.png&address=A%2CB&deep=%5Bobject%20Object%5D'
   )
 })
 

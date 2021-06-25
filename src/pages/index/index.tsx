@@ -1,9 +1,7 @@
-import React from 'react'
 import { View } from '@tarojs/components'
+import React from 'react'
 
-interface HomePageProps {}
-
-const HomePage: React.FC<HomePageProps> = () => {
+const HomePage: React.FC = () => {
   return <View style={{ padding: '32rpx' }}>首页11111</View>
 }
 

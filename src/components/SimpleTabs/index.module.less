@@ -1,0 +1,32 @@
+@import '../../styles/game.variables.less';
+
+// .header {
+
+// }
+
+.tab {
+  position: relative;
+  width: 148px;
+  margin: 12px 20px;
+  font-size: 24px;
+  text-align: center;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 53px;
+    height: 3px;
+    background: transparent;
+    transform: translateX(-50%) translateY(8px);
+    content: '';
+  }
+}
+
+.activeTab {
+  font-size: 28px;
+
+  &::after {
+    background: @game-dark;
+  }
+}

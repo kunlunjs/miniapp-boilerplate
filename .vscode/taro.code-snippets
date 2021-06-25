@@ -19,5 +19,22 @@
       "export default $1"
     ],
     "description": "Taro component"
+  },
+  "Taro page": {
+    "prefix": "tarop",
+    "body": [
+      "import React from 'react'",
+      "import { View } from '@tarojs/components'",
+      "",
+      "const $1:React.FC = () => {",
+      "",
+      "  return (",
+      "    <View>$2</View>",
+      "  )",
+      "}",
+      "",
+      "export default $1"
+    ],
+    "description": "Taro page"
   }
 }

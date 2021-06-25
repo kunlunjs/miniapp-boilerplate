@@ -1,6 +1,6 @@
 import { Config } from '@tarojs/taro'
 
-type MinaConfig = Config & { [ke: string]: any }
+type MinaConfig = Config & { [ke: string]: unknown }
 
 const config: MinaConfig = {
   lazyCodeLoading: 'requiredComponents',
@@ -9,7 +9,7 @@ const config: MinaConfig = {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: '标题',
-    navigationBarTextStyle: 'black',
+    navigationBarTextStyle: 'black'
   },
   tabBar: {
     color: '#8A8A8A',
@@ -19,22 +19,28 @@ const config: MinaConfig = {
         iconPath: 'assets/tabbar/home.png',
         selectedIconPath: 'assets/tabbar/home_on.png',
         pagePath: 'pages/index/index',
-        text: '首页2',
+        text: '首页2'
       },
       {
         iconPath: 'assets/tabbar/parlor.png',
         selectedIconPath: 'assets/tabbar/parlor_on.png',
         pagePath: 'pages/tab/index',
-        text: 'Tab',
+        text: 'Tab'
       },
       {
         iconPath: 'assets/tabbar/my.png',
         selectedIconPath: 'assets/tabbar/my_on.png',
         pagePath: 'pages/my/index',
-        text: '我的',
-      },
-    ],
+        text: '我的'
+      }
+    ]
   },
+  permission: {
+    'scope.userLocation': {
+      desc: '你的位置信息将用于获取您的位置'
+    }
+  },
+  sitemapLocation: 'sitemap.json'
 }
 
 // 开发环境添加组件示例页面

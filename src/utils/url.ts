@@ -57,7 +57,7 @@ export function resolvePath(...paths: string[]) {
  * @param obj 请求参数
  * @returns 序列化后的字符串
  */
-export function querystringify(obj: { [key: string]: any }): string {
+export function querystringify(obj: Record<string, string | number>): string {
   return Object.keys(obj)
     .reduce<string[]>((arr, key) => {
       const value = obj[key]
@@ -65,11 +65,7 @@ export function querystringify(obj: { [key: string]: any }): string {
         // 数组使用逗号拼接
         if (Array.isArray(value)) {
           if (value.length) {
-            arr.push(
-              `${encodeURIComponent(key)}=${encodeURIComponent(
-                value.join(','),
-              )}`,
-            )
+            arr.push(`${encodeURIComponent(key)}=${encodeURIComponent(value.join(','))}`)
           }
         } else {
           arr.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
@@ -78,4 +74,49 @@ export function querystringify(obj: { [key: string]: any }): string {
       return arr
     }, [])
     .join('&')
+}
+
+function isOssUrl(url: string) {
+  return url.includes('aliyun')
+}
+
+// https://help.aliyun.com/document_detail/44688.html?spm=a2c4g.11186623.6.736.100466a3Oj9mcA
+export function resizeOSSImage(
+  originUrl: string,
+  {
+    mode,
+    width,
+    height,
+    supportWebp = true
+  }: {
+    mode?: 'lfit' | 'mfit' | 'fill' | 'pad' | 'fixed'
+    width?: number
+    height?: number
+    supportWebp?: boolean
+  }
+) {
+  if (!originUrl || !isOssUrl(originUrl)) {
+    return originUrl
+  }
+  if (!width && !height) {
+    console.error('请为图片设置一个宽度或高度')
+    return originUrl
+  }
+  const queryArgs = ['image/resize']
+  if (mode) {
+    queryArgs.push(`,m_${mode}`)
+  } else if (width && height) {
+    // 长宽都提供的情况下用fill模式
+    queryArgs.push(`,m_fill`)
+  }
+  if (width) {
+    queryArgs.push(`,w_${width}`)
+  }
+  if (height) {
+    queryArgs.push(`,h_${height}`)
+  }
+  if (supportWebp !== false) {
+    queryArgs.push('/format,webp')
+  }
+  return `${originUrl}?x-oss-process=${queryArgs.join('')}`
 }

@@ -22,7 +22,7 @@ test('replaceRichText', async () => {
 <span style="background-color:red;">文本</span>\
 <img src="http://a.b.c/d.png" style="max-width:100%;height:auto;" />\
 <video src="http://a.b.c/d.mp4" />\
-`,
+`
   )
 })
 
@@ -33,7 +33,7 @@ test('replaceRichText', async () => {
 <span style="background-color:red;">文本</span>\
 <img src="http://a.b.c/d.png" class="img" style="border:1px solid #999;max-width:100%;height:auto;">\
 <video src="http://a.b.c/d.mp4" />\
-`,
+`
   )
 })
 

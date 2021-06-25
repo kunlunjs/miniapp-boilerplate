@@ -12,10 +12,7 @@ type StoreHookType<T> = () => [T, SetterType<T>]
  * @param service 获取数据的函数
  * @returns 类似useState的返回
  */
-function createStoreHook<T>(
-  initialValue: T,
-  service?: ServiceType<T>,
-): StoreHookType<T> {
+function createStoreHook<T>(initialValue: T, service?: ServiceType<T>): StoreHookType<T> {
   let store: T = initialValue
   let initialized = false
   let fetchPromise: Promise<T> | null
@@ -38,8 +35,7 @@ function createStoreHook<T>(
     useEffect(() => {
       if (service && !initialized && !fetchPromise) {
         const run = async () => {
-          const currentFetchPromise = (fetchPromise =
-            fetchPromise ?? service!())
+          const currentFetchPromise = (fetchPromise = fetchPromise ?? service!())
           const data = await currentFetchPromise
           setStoreFn(data)
           fetchPromise = null

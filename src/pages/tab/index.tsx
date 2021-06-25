@@ -1,9 +1,7 @@
-import React from 'react'
 import { View } from '@tarojs/components'
+import React from 'react'
 
-interface TabPageProps {}
-
-const TabPage: React.FC<TabPageProps> = ({}) => {
+const TabPage: React.FC = () => {
   return <View>Tab Page</View>
 }
 

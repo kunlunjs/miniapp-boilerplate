@@ -1,16 +1,14 @@
-import React from 'react'
-import { Button, View } from '@tarojs/components'
-import { useUser } from '@/hooks/useUser'
 import Loading from '@/components/Loading'
+import { useUser } from '@/hooks/useUser'
+import { Button, View } from '@tarojs/components'
+import React from 'react'
 import './index.less'
 
-interface MyPageProps {}
-
-const MyPage: React.FC<MyPageProps> = () => {
-  const { user, login, logged, logout, userFetched, userLoading } = useUser()
+const MyPage: React.FC = () => {
+  const { user, register, logged, logout, userFetched, userLoading } = useUser()
 
   const loginHandler = () => {
-    login('username', 'password')
+    register('username')
   }
 
   return !userFetched ? null : userLoading ? (

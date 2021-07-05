@@ -1,3 +1,4 @@
+/** @type {import('y2s/dist/types').ConfigRC} */
 module.exports = {
   // yapi 地址
   apiPrefix: 'https://apistore.ainanjing.org.cn/',

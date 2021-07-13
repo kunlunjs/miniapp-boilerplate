@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/no-commonjs
+/** @type {import('@babel/core').TransformOptions} */
 module.exports = {
   presets: [
     [

@@ -1,3 +1,4 @@
+/** @type import('eslint').Linter.BaseConfig */
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['taro/react', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],

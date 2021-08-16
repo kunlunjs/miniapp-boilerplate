@@ -29,7 +29,7 @@
     "build:qq": "taro build --type qq",
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
-    "gen:api": "y2s update -y",
+    "gen:api": "a2s generate -y",
     "upload": "minat upload",
     "up:test": "cross-env API_URL=http://xxx.xxx.xxx:8000/ ASSET_URL=http:http://xxx.xxx.xxx:3000 npm run build:weapp && minat upload",
     "up:prod": "cross-env API_URL=https://xxx.xxx.xxx/ ASSET_URL=http:http://xxx.xxx.xxx:3000 npm run build:weapp && minat upload"
@@ -60,6 +60,7 @@
     "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
+    "@zidong/a2s": "^0.0.7",
     "babel-preset-taro": "3.2.13",
     "baretest": "^2.0.0",
     "cross-env": "^7.0.3",
@@ -77,8 +78,7 @@
     "prettier": "^2.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "typescript": "^4.3.4",
-    "y2s": "^0.4.5"
+    "typescript": "^4.3.4"
   },
   "templateInfo": {
     "name": "taro-ui",

@@ -1,9 +1,14 @@
 // eslint-disable-next-line import/no-commonjs
+// const WindiCSS = require('windicss-webpack-plugin').default
 const path = require('path')
 
 function getAbsolutePath(url) {
   return path.resolve(__dirname, url)
 }
+
+// function addWindiPlugin(webpackChain) {
+//   webpackChain.plugin('windicss').use(WindiCSS)
+// }
 
 const config = {
   projectName: 'miniapp-boilerplate',
@@ -28,8 +33,8 @@ const config = {
   copy: {
     patterns: [
       { from: 'sitemap.json', to: 'dist/sitemap.json' },
-      { from: 'src/assets/tabbar', to: 'dist/assets/tabbar' },
-      { from: 'src/assets/local', to: 'dist/assets/local' }
+      { from: 'src/assets/tabbar', to: 'dist/assets/tabbar' }
+      // { from: 'src/assets/local', to: 'dist/assets/local' }
     ],
     options: {}
   },
@@ -57,6 +62,9 @@ const config = {
     miniCssExtractPluginOption: {
       ignoreOrder: true
     }
+    // webpackChain (chain, webpack) {
+    //   addWindiPlugin(chain)
+    // }
   },
   h5: {
     publicPath: '/',
@@ -74,6 +82,9 @@ const config = {
         }
       }
     }
+    // webpackChain (chain, webpack) {
+    //   addWindiPlugin(chain)
+    // }
   }
 }
 

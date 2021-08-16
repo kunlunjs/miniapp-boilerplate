@@ -1,8 +1,7 @@
 import { UserContext, UserState } from '@/hooks/useUser'
 import { clearStorage, login } from '@tarojs/taro'
 import React, { Component } from 'react'
-import services from './services'
-import { ServiceRequestAndResponseMap } from './services/yapi.api'
+import { ServiceArg, services } from './services'
 import './styles/app.less'
 import './styles/taro.scss'
 import { User } from './types/user'
@@ -26,14 +25,14 @@ class App extends Component {
       })
       if (!error) {
         // 该用户已注册过
-        if (data?.user_info) {
-          setToken(data.user_info.token)
-          await this.refreshMe()
-        } else {
-          this.setUser({
-            openID: data!.openid
-          })
-        }
+        // if (data?.user_info) {
+        //   setToken(data.user_info.token)
+        //   await this.refreshMe()
+        // } else {
+        //   this.setUser({
+        //     openID: data!.openid
+        //   })
+        // }
       }
     }
     this.setState({
@@ -47,7 +46,7 @@ class App extends Component {
     })
   }
 
-  register = async (params: ServiceRequestAndResponseMap['微信@注册']['body']) => {
+  register = async (params: ServiceArg<'微信@注册'>) => {
     this.setState({
       userLoading: true
     })

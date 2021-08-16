@@ -1,7 +1,7 @@
-import { ServiceRequestAndResponseMap } from '@/services/yapi.api'
+import { createContext, useContext } from 'react'
 import { User } from '@/types/user'
 import { noop } from '@/utils'
-import { createContext, useContext } from 'react'
+import { ServiceArg } from '@/services'
 
 export interface UserState {
   user: User | null
@@ -14,7 +14,7 @@ export interface UserState {
   // 设置当前登录用户
   setUser: (state: User | null) => void
   // 注册
-  register: (params: ServiceRequestAndResponseMap['微信@注册']['body']) => Promise<boolean>
+  register: (params: ServiceArg<'微信@注册'>) => Promise<boolean>
   // 更新我的信息
   refreshMe: () => Promise<boolean>
   // 登出

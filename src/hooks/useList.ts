@@ -1,5 +1,4 @@
-import services from '@/services'
-import type { ServiceKeys } from '@/services/yapi.service.keys'
+import { ServiceKeys, services } from '@/services'
 import useRequest from '@ahooksjs/use-request'
 import { useState } from 'react'
 
